@@ -54,7 +54,7 @@
         <p>Dollar Lover<br>Винтаж в идеальном состоянии. С пробегом, но в полной комплектации.</p>
         <div class="social-links">
             <a href="https://t.me/insomniawillkillme" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.roblox.com/users/твой_id/profile" target="_blank">
+            <a href="https://www.roblox.com/users/1782196760/profile" target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.17 21.05L3.13 17.58L5.83 2.95L20.87 6.42L18.17 21.05ZM8.56 12.33L10.02 12.67L10.36 11.21L8.9 10.87L8.56 12.33Z"/>
         </svg>
