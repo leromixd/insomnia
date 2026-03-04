@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body {
             height: 100vh; display: flex; justify-content: center; align-items: center;
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e); /* Темный хакерский градиент */
+            background: linear-gradient(-45deg,rgb(41, 12, 29), #632b63, #3e2433);
             background-size: 400% 400%; animation: gradient 15s ease infinite; overflow: hidden;
         }
         @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
