@@ -49,12 +49,11 @@
     </ul>
 
     <div class="card">
-        <img src="blob:https://web.telegram.org/c772e898-6010-4b44-8d03-9183deb536c5" alt="Avatar" class="profile-img">
+        <img src="https://i.ibb.co/kV2d22f1/image.png" alt="Avatar" class="profile-img">
         <h1>insomnia</h1>
         <p>Dollar Lover<br>Винтаж в идеальном состоянии. С пробегом, но в полной комплектации.</p>
         <div class="social-links">
             <a href="https://t.me/dragonrase" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://github.com/leromixd" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.roblox.com/users/твой_id/profile" target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.17 21.05L3.13 17.58L5.83 2.95L20.87 6.42L18.17 21.05ZM8.56 12.33L10.02 12.67L10.36 11.21L8.9 10.87L8.56 12.33Z"/>
