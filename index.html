@@ -1,152 +1,404 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для Сюни ❤️</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000; /* Глубокий черный */
-        }
-        canvas {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>LingvoPro — корпоративный английский с гарантией результата</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #1a1f36;
+      line-height: 1.5;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h2 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+      color: #0b1e33;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0052cc;
+      color: white;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #003d99;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,82,204,0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0052cc;
+      color: #0052cc;
+    }
+
+    .btn-outline:hover {
+      background: #0052cc;
+      color: white;
+    }
+
+    /* Шапка */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid #e7ebf2;
+      padding: 16px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 24px;
+      color: #0b1e33;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #0052cc;
+    }
+
+    nav a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3a4b;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #0052cc;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      background: linear-gradient(135deg, #f0f4fd 0%, #ffffff 100%);
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0b1e33;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #2c3a4b;
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    /* Карточки */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+      border: 1px solid #edf0f5;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .testimonial {
+      background: #f7f9fc;
+      border-radius: 18px;
+      padding: 28px;
+      font-style: italic;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .price-box {
+      background: white;
+      border-radius: 24px;
+      padding: 36px 28px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .price-box h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: #0b1e33;
+      color: #ccd6e0;
+      padding: 48px 0 28px;
+    }
+
+    footer a {
+      color: #a0b4cc;
+    }
+
+    @media (max-width: 768px) {
+      h2 { font-size: 28px; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Шапка (15 пункт) -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">Lingvo<span>Pro</span></div>
+      <nav>
+        <a href="#about">О проекте</a>
+        <a href="#forwhom">Для кого</a>
+        <a href="#stages">Этапы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#pricing" class="btn">Начать</a>
+    </div>
+  </header>
 
-<canvas id="heartCanvas"></canvas>
+  <!-- 1. Титульный экран -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Корпоративный английский,<br>который окупается с первого месяца</h1>
+      <p>Очное и онлайн-обучение для команд. Гарантируем измеримый рост деловой коммуникации через 8 недель.</p>
+      <a href="#pricing" class="btn">Получить бесплатный аудит →</a>
+    </div>
+  </section>
 
-<script>
-    const canvas = document.getElementById('heartCanvas');
-    const ctx = canvas.getContext('2d');
+  <!-- 2. О проекте / продукте -->
+  <section id="about">
+    <div class="container">
+      <h2>LingvoPro — языковая экосистема для бизнеса</h2>
+      <p style="max-width: 700px; font-size: 18px;">Мы встроили английский в реальные рабочие сценарии: переговоры, email-переписку, презентации и скрипты продаж. Никакой школьной грамматики — только бизнес-результат.</p>
+      <div class="grid-3">
+        <div class="card"><strong>8 лет</strong><br>на рынке B2B-обучения</div>
+        <div class="card"><strong>120+</strong><br>корпоративных клиентов</div>
+        <div class="card"><strong>94%</strong><br>команд доходят до финала</div>
+      </div>
+    </div>
+  </section>
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  <!-- 3. Кому подойдёт + болевые ситуации -->
+  <section id="forwhom" style="background: #f8fafd;">
+    <div class="container">
+      <h2>Когда язык становится барьером для бизнеса</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>😣 Отдел продаж</h3>
+          <p>Срываются международные сделки из-за страха говорить. Сотрудники избегают звонков и теряют выручку.</p>
+        </div>
+        <div class="card">
+          <h3>📉 Топ-менеджмент</h3>
+          <p>Не могут уверенно выступать на англоязычных конференциях, страдает репутация компании.</p>
+        </div>
+        <div class="card">
+          <h3>📧 Поддержка / аккаунты</h3>
+          <p>Медленная и шаблонная переписка, недопонимание с зарубежными партнёрами.</p>
+        </div>
+        <div class="card">
+          <h3>🚀 IT и продукт</h3>
+          <p>Техническая документация читается медленно, коммуникация с заказчиками буксует.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const heartParticles = [];
-    const floatingHearts = [];
-    const particleCount = 700; // Плотность центрального сердца
+  <!-- 4. Выгода для клиентов (пункт 5) -->
+  <section>
+    <div class="container">
+      <h2>Что получает ваша компания</h2>
+      <div class="grid-3">
+        <div class="card"><strong>+37%</strong><br> к успешным переговорам</div>
+        <div class="card"><strong>−61%</strong><br> ошибок в деловой переписке</div>
+        <div class="card"><strong>4.8 NPS</strong><br> сотрудники рекомендуют</div>
+      </div>
+    </div>
+  </section>
 
-    // Формула сердца
-    function getHeartPoint(t) {
-        const x = 16 * Math.pow(Math.sin(t), 3);
-        const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-        return { x: x * 13, y: y * 13 }; // Масштаб сердца
-    }
+  <!-- 5. Сценарий / этапы работы (пункт 6) -->
+  <section id="stages" style="background: #f0f4fd;">
+    <div class="container">
+      <h2>Как мы запускаем обучение</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px;">
+        <div style="flex:1; min-width:200px"><strong>1. Аудит</strong><br>Тестирование команды и интервью с руководителем.</div>
+        <div style="flex:1; min-width:200px"><strong>2. Программа</strong><br>Создаём учебный трек под ваши бизнес-задачи.</div>
+        <div style="flex:1; min-width:200px"><strong>3. Обучение</strong><br>Очные/онлайн занятия 2 раза в неделю.</div>
+        <div style="flex:1; min-width:200px"><strong>4. Отчёты</strong><br>Прозрачная аналитика прогресса каждого сотрудника.</div>
+      </div>
+    </div>
+  </section>
 
-    // Частицы главного сердца
-    class HeartParticle {
-        constructor(t) {
-            this.t = t;
-            this.pos = getHeartPoint(t);
-            this.size = Math.random() * 1.5 + 0.5;
-            this.color = `hsla(${Math.random() * 20 + 340}, 90%, 65%, ${Math.random() * 0.7 + 0.3})`;
-            this.offset = Math.random() * Math.PI * 2;
-        }
-        draw(pulse) {
-            const x = this.pos.x * (1 + pulse * 0.08) + canvas.width / 2;
-            const y = this.pos.y * (1 + pulse * 0.08) + canvas.height / 2;
-            
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(x, y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
+  <!-- 6. Результаты / отзывы (пункт 7) -->
+  <section id="reviews">
+    <div class="container">
+      <h2>Результаты, о которых говорят клиенты</h2>
+      <div class="grid-2">
+        <div class="testimonial">
+          «Через 3 месяца команда саппорта начала самостоятельно обрабатывать англоязычные тикеты. Окупилось в первом квартале».<br><strong>— CTO, финтех-компания</strong>
+        </div>
+        <div class="testimonial">
+          «Раньше боялись звонить зарубежным партнёрам, теперь назначают встречи без стресса. Отличный подход».<br><strong>— Руководитель отдела продаж</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Сердечки при клике
-    class ClickHeart {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.size = Math.random() * 12 + 6;
-            this.speedX = (Math.random() - 0.5) * 8;
-            this.speedY = (Math.random() - 0.5) * 8;
-            this.opacity = 1;
-            this.color = `hsla(${Math.random() * 40 + 330}, 100%, 70%, 1)`;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            this.opacity -= 0.015;
-            this.size *= 0.99;
-        }
-        draw() {
-            ctx.save();
-            ctx.globalAlpha = this.opacity;
-            ctx.fillStyle = this.color;
-            ctx.translate(this.x, this.y);
-            ctx.beginPath();
-            ctx.moveTo(0, 0);
-            ctx.bezierCurveTo(-this.size/2, -this.size/2, -this.size, this.size/3, 0, this.size);
-            ctx.bezierCurveTo(this.size, this.size/3, this.size/2, -this.size/2, 0, 0);
-            ctx.fill();
-            ctx.restore();
-        }
-    }
+  <!-- 7. Цена / тарифы (пункт 8) -->
+  <section id="pricing" style="background: #f8fafd;">
+    <div class="container">
+      <h2>Тарифы для команд</h2>
+      <div class="grid-3">
+        <div class="price-box">
+          <h3>Старт</h3>
+          <p>до 10 сотрудников</p>
+          <p style="font-size: 32px; font-weight: 800;">от 85 000 ₽/мес</p>
+          <a href="#" class="btn" style="margin-top:16px;">Оставить заявку</a>
+        </div>
+        <div class="price-box">
+          <h3>Бизнес</h3>
+          <p>10–50 сотрудников</p>
+          <p style="font-size: 32px; font-weight: 800;">от 195 000 ₽/мес</p>
+          <a href="#" class="btn" style="margin-top:16px;">Рассчитать</a>
+        </div>
+        <div class="price-box">
+          <h3>Корпорация</h3>
+          <p>от 50 сотрудников</p>
+          <p style="font-size: 32px; font-weight: 800;">индивидуально</p>
+          <a href="#" class="btn-outline btn" style="margin-top:16px;">Обсудить</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Создаем основное сердце
-    for (let i = 0; i < particleCount; i++) {
-        const t = (i / particleCount) * Math.PI * 2;
-        heartParticles.push(new HeartParticle(t));
-    }
+  <!-- 8. Плашка с призывом к действию (пункт 9) -->
+  <section style="background: #0052cc; color: white; text-align: center; padding: 60px 0;">
+    <div class="container">
+      <h2 style="color:white;">Готовы прокачать команду?</h2>
+      <p style="font-size: 18px; margin-bottom: 24px;">Оставьте заявку на бесплатный аудит — покажем слабые места и план обучения за 24 часа.</p>
+      <a href="#" class="btn" style="background:white; color:#0052cc;">Записаться на аудит</a>
+    </div>
+  </section>
 
-    function animate() {
-        // Очистка с мягким шлейфом
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+  <!-- 9. Кейсы (пункт 10) -->
+  <section>
+    <div class="container">
+      <h2>Кейсы внедрения</h2>
+      <div class="grid-2">
+        <div class="card"><strong>Международный логистический оператор</strong><br>Сократили время обработки англоязычных запросов на 40% за 4 месяца.</div>
+        <div class="card"><strong>IT-аутсорсер</strong><br>Разработчики начали вести daily-стендапы на английском без подготовки.</div>
+      </div>
+    </div>
+  </section>
 
-        const pulse = Math.sin(Date.now() * 0.003); // Скорость биения
+  <!-- 10. Сертификаты / лицензии (пункт 11) -->
+  <section style="background: #f8fafd;">
+    <div class="container">
+      <h2>Наши компетенции подтверждены</h2>
+      <p>Аккредитованный центр Cambridge Assessment English, лицензия на образовательную деятельность №123456.</p>
+      <!-- здесь может быть изображение сертификатов -->
+    </div>
+  </section>
 
-        // Рисуем частицы сердца
-        heartParticles.forEach(p => p.draw(pulse));
+  <!-- 11. Партнёры B2B (пункт 12) -->
+  <section>
+    <div class="container">
+      <h2>Нам доверяют</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:center; opacity:0.7;">
+        <div style="font-weight:600; font-size:20px;">TechFlow</div>
+        <div style="font-weight:600; font-size:20px;">GlobalConnect</div>
+        <div style="font-weight:600; font-size:20px;">СберЛогистика</div>
+        <div style="font-weight:600; font-size:20px;">Яндекс.Облако</div>
+      </div>
+    </div>
+  </section>
 
-        // Рисуем текст
-        ctx.save();
-        ctx.font = `bold ${24 + pulse * 2}px Arial`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillStyle = '#fff';
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = '#ff4d6d';
-        ctx.fillText('сюня я типя люлю! :з', canvas.width / 2, canvas.height / 2);
-        ctx.restore();
+  <!-- 12. FAQ (пункт 13) -->
+  <section id="faq" style="background: #f8fafd;">
+    <div class="container">
+      <h2>Часто задаваемые вопросы</h2>
+      <div class="faq-item"><div class="faq-question">Можно ли обучать сотрудников с разным уровнем?</div><p>Да, мы формируем мини-группы после входного тестирования.</p></div>
+      <div class="faq-item"><div class="faq-question">Как измеряется прогресс?</div><p>Ежемесячные отчёты с метриками: беглость речи, точность письма, охват бизнес-лексики.</p></div>
+      <div class="faq-item"><div class="faq-question">Есть ли очные занятия в Москве?</div><p>Да, проводим обучение в вашем офисе или в наших аудиториях в центре.</p></div>
+    </div>
+  </section>
 
-        // Обработка кликовых сердечек
-        for (let i = floatingHearts.length - 1; i >= 0; i--) {
-            floatingHearts[i].update();
-            floatingHearts[i].draw();
-            if (floatingHearts[i].opacity <= 0) {
-                floatingHearts.splice(i, 1);
-            }
-        }
+  <!-- 13. Как добраться (пункт 14) -->
+  <section>
+    <div class="container">
+      <h2>Офис в Москве</h2>
+      <p>м. Павелецкая, Космодамианская наб., 52с1. Работаем пн–пт 9:00–19:00.</p>
+      <div style="margin-top:20px; border-radius:16px; overflow:hidden;">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.635%2C55.730&z=13&pt=37.635,55.730,pm2rdl" width="100%" height="280" style="border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-        requestAnimationFrame(animate);
-    }
-
-    // Реакция на нажатие
-    const handleAction = (x, y) => {
-        for (let i = 0; i < 12; i++) {
-            floatingHearts.push(new ClickHeart(x, y));
-        }
-    };
-
-    window.addEventListener('mousedown', (e) => handleAction(e.clientX, e.clientY));
-    window.addEventListener('touchstart', (e) => handleAction(e.touches[0].clientX, e.touches[0].clientY));
-
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-
-    animate();
-</script>
-
+  <!-- 14. Подвал (часть 15 пункта) -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap;">
+      <div>© 2026 LingvoPro — корпоративное обучение английскому</div>
+      <div><a href="#">Политика конфиденциальности</a> | <a href="#">Договор-оферта</a></div>
+    </div>
+  </footer>
 </body>
 </html>
